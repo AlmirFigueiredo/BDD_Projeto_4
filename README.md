@@ -20,7 +20,7 @@ Para aplicar a 1NF nas tabelas do nosso banco de dados, as seguintes alteraçõe
 -- Depois:
     rua VARCHAR,
     cidade VARCHAR,
-    numero VARCHAR,
+    endereco_numero VARCHAR,
     bairro VARCHAR,
     complemento VARCHAR
 ```
