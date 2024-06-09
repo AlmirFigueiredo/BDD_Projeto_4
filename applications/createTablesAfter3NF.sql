@@ -1,16 +1,16 @@
 CREATE TABLE pessoa (
-    pessoa_id INTEGER PRIMARY KEY,
-    nome VARCHAR,
     email VARCHAR,
     rua VARCHAR,
+    endereco_numero VARCHAR,
+    complemento VARCHAR,
     cidade VARCHAR,
     bairro VARCHAR,
-    complemento VARCHAR,
     data_nascimento DATE,
+    telefone VARCHAR,
+    pessoa_id INTEGER PRIMARY KEY,
     cpf VARCHAR,
-    telefone VARCHAR
+    nome VARCHAR
 );
-
 
 CREATE TABLE funcionario (
     funcionario_id INTEGER,
@@ -53,19 +53,15 @@ CREATE TABLE pedido (
     data_pagamento DATE,
     metodo_pagamento VARCHAR,
     valor_total DECIMAL,
-    endereco_entrega_rua VARCHAR,
-    endereco_entrega_cidade VARCHAR,
-    endereco_entrega_bairro VARCHAR,
-    endereco_entrega_complemento VARCHAR,
+    endereco_entrega VARCHAR,
     codigo_rastreamento VARCHAR,
     status_pedido VARCHAR,
     status_pagamento VARCHAR,
     status_entrega VARCHAR,
     data_entrega DATE,
-    fk_cliente_id INTEGER,
-    FOREIGN KEY (fk_cliente_id) REFERENCES cliente (cliente_id)
+    fk_cliente_cliente_id INTEGER,
+    fk_cliente_fk_pessoa_pessoa_id INTEGER
 );
-
 
 CREATE TABLE produto (
     produto_id INTEGER PRIMARY KEY,
@@ -79,14 +75,14 @@ CREATE TABLE produto (
 
 CREATE TABLE fornecedor (
     fornecedor_id INTEGER PRIMARY KEY,
-    nome_fantasia VARCHAR,
-    telefone VARCHAR,
     rua VARCHAR,
+    endereco_numero VARCHAR,
+    complemento VARCHAR,
     cidade VARCHAR,
     bairro VARCHAR,
-    complemento VARCHAR
+    nome_fantasia VARCHAR,
+    telefone VARCHAR
 );
-
 
 CREATE TABLE livro (
     livro_id INTEGER PRIMARY KEY,
@@ -101,14 +97,14 @@ CREATE TABLE livro (
 CREATE TABLE distribuidora (
     distribuidora_id INTEGER PRIMARY KEY,
     telefone VARCHAR,
-    nome_fantasia VARCHAR,
-    email VARCHAR,
     rua VARCHAR,
+    endereco_numero VARCHAR,
+    complemento VARCHAR,
     cidade VARCHAR,
     bairro VARCHAR,
-    complemento VARCHAR
+    nome_fantasia VARCHAR,
+    email VARCHAR
 );
-
 
 CREATE TABLE autor (
     autor_id INTEGER PRIMARY KEY,
@@ -121,25 +117,21 @@ CREATE TABLE autor (
 
 CREATE TABLE editora (
     editora_id INTEGER PRIMARY KEY,
-    email VARCHAR,
-    telefone VARCHAR,
-    nome VARCHAR,
     rua VARCHAR,
+    endereco_numero VARCHAR,
+    complemento VARCHAR,
     cidade VARCHAR,
     bairro VARCHAR,
-    complemento VARCHAR
+    email VARCHAR,
+    telefone VARCHAR,
+    nome VARCHAR
 );
-
 
 CREATE TABLE biblioteca (
     biblioteca_id INTEGER PRIMARY KEY,
     nome VARCHAR,
-    rua VARCHAR,
-    cidade VARCHAR,
-    bairro VARCHAR,
-    complemento VARCHAR
+    endereco VARCHAR
 );
-
 
 CREATE TABLE disciplina (
     disciplina_id INTEGER PRIMARY KEY,
